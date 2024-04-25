@@ -28,7 +28,7 @@ export default function AnimeDetails() {
 
   const getUserInfo = async (id) => {
     try {
-      const resp = await fetch("http://localhost:4000/getuser/" + id, {
+      const resp = await fetch("https://animehubproject.onrender.com/getuser/" + id, {
         headers: { Authorization: "Bearer " + token },
       });
       const data = await resp.json();
@@ -52,7 +52,7 @@ export default function AnimeDetails() {
   const addTofavorites = async (id) => {
     try {
       const resp = await axios.patch(
-        `http://localhost:4000/update/favanimes/${id}`,
+        `https://animehubproject.onrender.com/update/favanimes/${id}`,
         { animeId: singleAnime._id },
         {
           headers: {
@@ -76,7 +76,7 @@ export default function AnimeDetails() {
     const getComments = async () => {
       try {
         const resp = await axios.get(
-          `http://localhost:4000/get/comments/${singleAnime._id}/${pages}`
+          `https://animehubproject.onrender.com/get/comments/${singleAnime._id}/${pages}`
         );
         setShowMore(resp.data.showMore);
         setComments(resp.data.comments);
@@ -104,7 +104,7 @@ export default function AnimeDetails() {
     };
     try {
       const resp = await axios.post(
-        "http://localhost:4000/post/comment",
+        "https://animehubproject.onrender.com/post/comment",
         postObj,
         {
           headers: {

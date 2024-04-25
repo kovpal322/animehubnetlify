@@ -17,7 +17,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:4000/login", {
+    const response = await fetch("https://animehubproject.onrender.com/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: {
@@ -40,7 +40,7 @@ export default function Login() {
 
     const loginUser = async () => {
       try {
-        const resp = await axios.post("http://localhost:4000/google/login", {
+        const resp = await axios.post("https://animehubproject.onrender.com/google/login", {
           name: responseObj.name,
           email: responseObj.email,
           picture: responseObj.picture,
@@ -75,7 +75,7 @@ export default function Login() {
     e.currentTarget.style.opacity = "0.2";
     e.currentTarget.style.cursor = "not-allowed";
     try {
-      const resp = await axios.post("http://localhost:4000/forgot-password", {
+      const resp = await axios.post("https://animehubproject.onrender.com/forgot-password", {
         email: forgotEmail,
       });
       if (Object.keys(resp.data).length) setSuccessMessage(resp.data);

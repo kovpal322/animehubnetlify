@@ -6,7 +6,7 @@ const Header = ({ children }) => {
   const [userInfo, setUserInfo] = useState();
   const getUserInfo = async (id) => {
     try {
-      const resp = await fetch("http://localhost:4000/getuser/" + id, {
+      const resp = await fetch("https://animehubproject.onrender.com/getuser/" + id, {
         headers: { Authorization: "Bearer " + user.token },
       });
       const data = await resp.json();

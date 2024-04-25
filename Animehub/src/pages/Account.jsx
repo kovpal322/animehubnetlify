@@ -15,7 +15,7 @@ export default function UserProfile() {
   const [userInfo, setUserInfo] = useState({});
   const getUserInfo = async (id) => {
     try {
-      const resp = await fetch("http://localhost:4000/getuser/" + id, {
+      const resp = await fetch("https://animehubproject.onrender.com/getuser/" + id, {
         headers: { Authorization: "Bearer " + token },
       });
       const data = await resp.json();
@@ -43,7 +43,7 @@ export default function UserProfile() {
     formData.append("image", image);
     try {
       const resp = await axios.patch(
-        "http://localhost:4000/change-picture/" + user,
+        "https://animehubproject.onrender.com/change-picture/" + user,
         formData,
         {
           headers: {
@@ -67,7 +67,7 @@ export default function UserProfile() {
       return;
     }
     try {
-      await axios.delete("http://localhost:4000/user/delete/" + user, {
+      await axios.delete("https://animehubproject.onrender.com/user/delete/" + user, {
         headers: {
           Authorization: "Bearer " + token,
         },

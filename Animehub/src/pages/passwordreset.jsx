@@ -23,7 +23,7 @@ export default function Reset() {
     }
     try {
       const resp = await axios.patch(
-        "http://localhost:4000/reset-password/" + user_id,
+        "https://animehubproject.onrender.com/reset-password/" + user_id,
         { password }
       );
       setMessage(resp.data);

@@ -32,7 +32,7 @@ function AnimeDashboard() {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/add/anime",
+        "https://animehubproject.onrender.com/add/anime",
         uploadAnimeObj
       );
       console.log(response.data);
@@ -55,7 +55,7 @@ function AnimeDashboard() {
 
   const deleteAnime = async (id) => {
     try {
-      await axios.delete("http://localhost:4000/delete/anime/" + id, {
+      await axios.delete("https://animehubproject.onrender.com/delete/anime/" + id, {
         headers: {
           Authorization: "Bearer " + token,
         },
