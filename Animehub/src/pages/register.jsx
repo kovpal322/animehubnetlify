@@ -17,7 +17,7 @@ export default function Register() {
 
     if (checked) {
       if (password === confirmPassword) {
-        const response = await fetch("https://animehubproject.onrender.com/signup", {
+        const response = await fetch("http://localhost:4000/signup", {
           method: "POST",
           body: JSON.stringify({ email, password, username }),
           headers: {
@@ -52,7 +52,7 @@ export default function Register() {
 
     const loginUser = async () => {
       try {
-        const resp = await axios.post("https://animehubproject.onrender.com/google/login", {
+        const resp = await axios.post("http://localhost:4000/google/login", {
           name: responseObj.name,
           email: responseObj.email,
           picture: responseObj.picture,

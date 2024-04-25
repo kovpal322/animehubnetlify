@@ -13,7 +13,7 @@ export default function Animes() {
     const fetchAnimes = async () => {
       try {
         const response = await axios.get(
-          "https://animehubproject.onrender.com/get/animes/?q=" + search
+          "http://localhost:4000/get/animes/?q=" + search
         );
         setAnimes(response.data);
         setNewAnimes(response.data);
@@ -36,7 +36,7 @@ export default function Animes() {
     const fetchGenres = async () => {
       try {
         const response = await axios.get(
-          "https://animehubproject.onrender.com/get/categories/?q=" + search
+          "http://localhost:4000/get/categories/?q=" + search
         );
         setgenres(response.data);
       } catch (err) {

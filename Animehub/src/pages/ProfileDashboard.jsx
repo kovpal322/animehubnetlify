@@ -31,7 +31,7 @@ function ProfileDashboard() {
   useEffect(() => {
     const getUsres = async () => {
       try {
-        const resp = await axios.get("https://animehubproject.onrender.com/get/users", {
+        const resp = await axios.get("http://localhost:4000/get/users", {
           headers: {
             Authorization: "Bearer " + user.token,
           },
@@ -51,7 +51,7 @@ function ProfileDashboard() {
       return;
     }
     try {
-      await axios.delete("https://animehubproject.onrender.com/user/delete/" + id, {
+      await axios.delete("http://localhost:4000/user/delete/" + id, {
         headers: {
           Authorization: "Bearer " + user.token,
         },

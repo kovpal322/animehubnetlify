@@ -14,7 +14,7 @@ export default function Favoriteanimes() {
   const getfavoriteAnimes = async () => {
     try {
       const resp = await axios.get(
-        "https://animehubproject.onrender.com/get/favanimes/" + user
+        "http://localhost:4000/get/favanimes/" + user
       );
 
       setFavAnimes(resp.data);
@@ -31,7 +31,7 @@ export default function Favoriteanimes() {
   const removeAnimeFromFavorites = async (id) => {
     try {
       const resp = await axios.patch(
-        "https://animehubproject.onrender.com/remove/favanime/" + user,
+        "http://localhost:4000/remove/favanime/" + user,
         { animeId: id }
       );
       setFavAnimes(favAnimes.filter((anime) => anime._id !== id));

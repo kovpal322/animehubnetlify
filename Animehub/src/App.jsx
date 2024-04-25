@@ -1,5 +1,4 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { w3cwebsocket } from 'websocket';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
@@ -37,7 +36,7 @@ function App() {
   const [userInfo, setUserInfo] = useState({});
   const getUserInfo = async (id) => {
     try {
-      const resp = await fetch("https://animehubproject.onrender.com/getuser/" + id, {
+      const resp = await fetch("http://localhost:4000/getuser/" + id, {
         headers: { Authorization: "Bearer " + token },
       });
       const data = await resp.json();

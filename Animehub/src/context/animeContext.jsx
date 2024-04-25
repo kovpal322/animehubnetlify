@@ -32,7 +32,7 @@ export const AnimeContextProvider = ({ children }) => {
     const fetchAnimes = async () => {
       try {
         const response = await axios.get(
-          "https://animehubproject.onrender.com/get/animes/?q="
+          "http://localhost:4000/get/animes/?q="
         );
 
         dispatch({ type: "GET_ANIMES", payload: response.data });

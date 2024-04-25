@@ -6,7 +6,7 @@ const Header = ({ children }) => {
   const [userInfo, setUserInfo] = useState();
   const getUserInfo = async (id) => {
     try {
-      const resp = await fetch("https://animehubproject.onrender.com/getuser/" + id, {
+      const resp = await fetch("http://localhost:4000/getuser/" + id, {
         headers: { Authorization: "Bearer " + user.token },
       });
       const data = await resp.json();
@@ -30,7 +30,7 @@ const Header = ({ children }) => {
   return (
     <header>
       <nav
-        className="navbar navbar-expand-lg fixed-top"
+        className="navbar navbar-expand-lg"
         style={{ backgroundColor: "#121221" }}
       >
         <div className="container-fluid">
@@ -70,16 +70,20 @@ const Header = ({ children }) => {
                   aria-disabled="true"
                 >
                   Account
+                  
                 </a>
               </li>
+              <li>
+              </li>
             </ul>
+            <div id="google_translate_element"></div> 
             {userInfo && <p className="m-3">{userInfo.username}</p>}
             {userInfo && (
               <img
                 src={
                   userInfo.profilepicture.includes("googleusercontent")
                     ? userInfo.profilepicture
-                    : `./public/uploads/${userInfo.profilepicture}`
+                    : `${userInfo.profilepicture}`
                 }
                 className="user-image"
               ></img>

@@ -19,7 +19,7 @@ const ChangeProfileDetails = () => {
     e.preventDefault();
     try {
       const resp = await fetch(
-        "https://animehubproject.onrender.com/update/user/" + user.user,
+        "http://localhost:4000/update/user/" + user.user,
         {
           method: "PATCH",
           body: JSON.stringify(userDetails),
