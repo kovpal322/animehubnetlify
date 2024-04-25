@@ -13,7 +13,7 @@ const Chat = (props) => {
   console.log(props.chatUser.secret);
   return (
     <div
-      style={{ height: "100vh" }}
+      style={{ height: "100dvh" }}
       className="fixed-top text-white chat-background"
     >
       <MultiChatWindow {...chatProps} />
